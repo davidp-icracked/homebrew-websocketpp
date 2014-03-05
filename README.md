@@ -1,23 +1,16 @@
-homebrew-jsoncpp
-================
+homebrew-websocketpp
+====================
 
-Thanks to [Json-cpp](https://github.com/mrtazz/json-cpp "Json Parser for C/C++")
+Thanks to [websocketpp](https://github.com/zaphoyd/websocketpp "C++/Boost Asio based websocket client/server library")
 
 Usage.
 -----------------
 ``` bash
-brew tap david-icracked/homebrew-jsoncpp
-brew install jsoncpp
+brew tap david-icracked/homebrew-websocketpp
+brew install websocketpp
 ```
 
 Code.
 -----------------
-``` c++
-# include header
-include <json/json.h>
-```
-``` makefile
-# compile with option
--ljson
-```
+[Docs](http://www.zaphoyd.com/websocketpp)
 
