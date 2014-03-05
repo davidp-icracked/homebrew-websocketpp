@@ -1,6 +1,6 @@
 require 'formula'
 
-class Jsoncpp < Formula
+class Websocktpp < Formula
   homepage 'https://github.com/zaphoyd/websocketpp'
   url 'https://github.com/zaphoyd/websocketpp/archive/0.3.0-alpha4.tar.gz'
   # sha1 ''
