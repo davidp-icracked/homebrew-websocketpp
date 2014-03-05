@@ -1,26 +1,12 @@
 require 'formula'
 
 class Websocketpp < Formula
-  homepage 'https://github.com/zaphoyd/websocketpp'
-  url 'https://github.com/zaphoyd/websocketpp/archive/0.3.0-alpha4.tar.gz'
-  # sha1 ''
+  head 'git://github.com/zaphoyd/websocketpp'
 
-  depends_on 'scons' => :build
-
+  depends_on 'cmake' => :build
+  
   def install
-    # this is how the SConstruct build system creates file paths
-    gccversion = `g++ -dumpversion`
-    gccversion = gccversion.delete("\n");
-    # run the build
-    system "scons platform=linux-gcc"
-    #install the libs
-    #lib.install "libs/linux-gcc-#{gccversion}/libwebsocketpp_linux-gcc-#{gccversion}_libmt.a" => "libwebsocketpp.a", 
-    #{}"libs/linux-gcc-#{gccversion}/libwebsocketpp_linux-gcc-#{gccversion}_libmt.dylib" => "websocketpp.dylib"
-    # install the headers
-    include.install "include/websocketpp" => "websocketpp"
-  end
-
-  test do
-    system "false"
+    system "cmake  . #{std_cmake_parameters}"
+    system "make install"
   end
 end
